@@ -36,13 +36,21 @@
 //   return result / array.length;
 // }
 exports.min = function min (array) {
-  return 0;
+  if (array === undefined || array.length === 0) return 0;
+  // let min = array[0];
+  // for (let item of array) {
+  //   min = Math.min(min, item);
+  // }
+  // return min;
+  return array.reduce((acc, item) => Math.min(acc, item));
 }
 
 exports.max = function max (array) {
-  return 0;
+  if (array === undefined || array.length === 0) return 0;
+  return array.reduce((acc, item) => Math.max(acc, item));
 }
 
 exports.avg = function avg (array) {
-  return 0;
+  if (array === undefined || array.length === 0) return 0;
+  return array.reduce((acc, item) => acc + item) / array.length;
 }
